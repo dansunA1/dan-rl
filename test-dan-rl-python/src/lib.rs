@@ -88,6 +88,7 @@ fn make_actor_b(x: usize, y: usize) -> MyActorB {
 }
 
 dan_rl_python::make_module!(
+    module_name: test_dan_rl_python,
     action: MyAction,
     env_factories: [
         MyEnv(x: usize) => make_env(x),

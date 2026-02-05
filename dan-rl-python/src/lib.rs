@@ -14,6 +14,7 @@ use std::sync::mpsc::{TryRecvError, TrySendError};
 #[macro_export]
 macro_rules! make_module {
     (
+        module_name: $module_name:ident,
         action: $action:ty,
         env_factories: [$($env_name:ident($($env_arg:ident: $env_arg_ty:ty),* $(,)?) => $env:expr),* $(,)?],
         actor_factories: [$($actor_name:ident($($actor_arg:ident: $actor_arg_ty:ty),* $(,)?) => $actor:expr),* $(,)?]
@@ -179,7 +180,7 @@ impl RuleSamplingWorker {
 }
 
 #[pymodule]
-fn _test_dan_rl_python(_py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn $module_name(_py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<EnvConfig>()?;
     m.add_class::<ActorConfig>()?;
     m.add_class::<RuleSamplingWorker>()?;
