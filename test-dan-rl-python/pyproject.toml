@@ -1,0 +1,21 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "test-dan-rl-python"
+version = "0.1.0"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+[tool.maturin]
+include = [{ path = "rust-toolchain.toml", format = "sdist" }]
+module-name = "danrl._test_dan_rl_python"
+compatibility = "linux"
+# Specify the Cargo.toml path relative to pyproject.toml
+manifest-path = "Cargo.toml"
+

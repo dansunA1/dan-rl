@@ -1,4 +1,8 @@
 [workspace]
 members = [
-    "dan-rl"
+    "dan-rl-core",
+    "dan-rl-ipc",
+    "dan-rl-python",
+    "test-dan-rl-python",
 ]
+resolver = "2"

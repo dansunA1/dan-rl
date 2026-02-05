@@ -1,0 +1,16 @@
+[package]
+name = "dan-rl-python"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = ["py"]
+py = []
+
+[dependencies]
+dan-macros = { git = "https://github.com/dansunA1/dan-macros", branch = "main" }
+dan-rl-core = { path = "../dan-rl-core" }
+pyo3 = "0.27.0"
+numpy = "0.27.1"
+pyo3-ffi = "0.27.1"
+
